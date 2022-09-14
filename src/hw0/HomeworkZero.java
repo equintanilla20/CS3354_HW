@@ -7,6 +7,7 @@ public class HomeworkZero {
         StringBuilder randomStr = new StringBuilder();
         Random rand = new Random();
         char c;
+
         for (int i = 0; i < length; i++) {
             c = (char)(rand.nextInt(26) + 'a');
             if (randomStr.length() > 1 && randomStr.length() % 10 == 1) {
@@ -14,7 +15,6 @@ public class HomeworkZero {
             }
             randomStr.append(c);
         }
-
         return randomStr.toString();
     }
 
@@ -22,7 +22,7 @@ public class HomeworkZero {
         HomeworkZero hw0 = new HomeworkZero();
         Random rand = new Random();
         double preFunctionMillis, postFunctionMillis;
-        int length = rand.nextInt(1000000);
+        int length = rand.nextInt(10000);
 
         preFunctionMillis = System.currentTimeMillis();
         System.out.println(hw0.generateRandomString(length));
