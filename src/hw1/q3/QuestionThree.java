@@ -23,19 +23,24 @@ public class QuestionThree {
         answer = arrayList.toArray(answer);
         return answer;
     }
+
     public int coinValue (int n) {
         Integer[] array;
         array = generateArray(n);
         int expectedSum = (n*(n+1))/2;
         int actualSum = 0;
 
-        System.out.println("Array: ");
+        System.out.print("Array: ");
         for (int i : array) {
             actualSum += i;
-            System.out.println(i);
+            if (i == 0) {
+                System.out.print("X ");
+            } else {
+                System.out.print(i + " ");
+            }
         }
+        System.out.println();
 
-
-        return answer;
+        return (expectedSum - actualSum);
     }
 }
