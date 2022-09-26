@@ -20,6 +20,7 @@ public class QuestionThree {
             }
         }
         arrayList.set(x, 0);
+
         answer = arrayList.toArray(answer);
         return answer;
     }

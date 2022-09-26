@@ -19,24 +19,25 @@ public class QuestionFour {
         return dnaSequence;
     }
     public int questionFour(int n) {
-//        char[] sequenceOne = generateDnaSequence(n);
-//        char[] sequenceTwo = generateDnaSequence(n);
-        char[] sequenceOne = {'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G'};
-        char[] sequenceTwo = {'C', 'G', 'G', 'G', 'G', 'A', 'G', 'G', 'G', 'G', 'G'};
+        char[] sequenceOne = generateDnaSequence(n);
+        char[] sequenceTwo = generateDnaSequence(n);
+//        char[] sequenceOne = {'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G'};
+//        char[] sequenceTwo = {'C', 'G', 'G', 'G', 'G', 'A', 'G', 'G', 'G', 'G', 'G'};
         int gSeqStart = 0;
         int gCount = 0;
         int index = 0;
 
-        System.out.print("Sequence One: { ");
-        for (char c : sequenceOne) {
-            System.out.print(c + " ");
-        }
-        System.out.print("}\nSequence Two: { ");
-        for (char c : sequenceTwo) {
-            System.out.print(c + " ");
-        }
-        System.out.print("}\n");
-        while (index < 11 && gCount < 4) {
+//        System.out.print("Sequence One: { ");
+//        for (char c : sequenceOne) {
+//            System.out.print(c + " ");
+//        }
+//        System.out.print("}\nSequence Two: { ");
+//        for (char c : sequenceTwo) {
+//            System.out.print(c + " ");
+//        }
+//        System.out.print("}\n");
+
+        while (index < n && gCount < 4) {
             if (sequenceOne[index] == 'G' && gCount == 0) {
                 gSeqStart = index;
             }
