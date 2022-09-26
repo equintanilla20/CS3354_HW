@@ -1,5 +1,12 @@
 package hw1.q1;
 
+/*
+Ezekiel Quintanilla
+09/26/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class QuestionOne {
     // 1) Write a Java method that will take a string and reverse it. Can you come up with a method that is faster
     // than regular reversing of the for loop?

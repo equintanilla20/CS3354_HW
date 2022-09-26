@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Arrays;
 
+/*
+Ezekiel Quintanilla
+09/26/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class QuestionThree {
     // 3) In a bag there are N distinct coins. Each coin has a value between 1 and N. However, there is one coin
     // that is marked X. How will you find the value of X in an efficient way?

@@ -2,6 +2,13 @@ package hw1.q2;
 
 import java.util.Stack;
 
+/*
+Ezekiel Quintanilla
+09/26/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class QuestionTwo {
     // 2) Write a Java program that generates a new string by concatenating the reversed substrings of even
     // indexes and odd indexes separately from a given string. For this code you may use the above method to

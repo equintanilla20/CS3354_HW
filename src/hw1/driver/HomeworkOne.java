@@ -7,6 +7,13 @@ import hw1.q3.QuestionThree;
 import hw1.q4.QuestionFour;
 import hw1.q5.QuestionFive;
 
+/*
+Ezekiel Quintanilla
+09/26/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class HomeworkOne {
     private double preFunctionMillis, postFunctionMillis;
     Scanner userInput = new Scanner(System.in);
@@ -83,13 +90,20 @@ public class HomeworkOne {
         System.out.println("Question Five Test");
         System.out.print("Enter an array size: ");
         int userArraySize = userInput.nextInt();
-        System.out.print("\nEnter the number of \nplaces to shift: ");
+        System.out.print("\nEnter the number \nof places to shift: ");
         int userShiftPlaces = userInput.nextInt();
         while (userShiftPlaces < 0 || userArraySize <= userShiftPlaces) {
-            System.out.println("Invalid input!");
-            System.out.print("Enter an array size: ");
+            if (userShiftPlaces > userArraySize) {
+                System.out.println("Invalid input!");
+                System.out.println("Array size must be greater than number of places to shift");
+                System.out.println("Try again");
+            } else {
+                System.out.println("Invalid input!");
+                System.out.println("Try again");
+            }
+            System.out.print("\nEnter an array size: ");
             userArraySize = userInput.nextInt();
-            System.out.println("\nEnter the number of \nplaces to shift: ");
+            System.out.print("\nEnter the number \nof places to shift: ");
             userShiftPlaces = userInput.nextInt();
         }
         preFunctionMillis = System.currentTimeMillis();
@@ -103,6 +117,7 @@ public class HomeworkOne {
         HomeworkOne hw1 = new HomeworkOne();
 
         // Run tests
+        System.out.println("HOMEWORK ONE\n");
         // Q1
         hw1.runQuestionOne();    // Success case
         hw1.runQuestionOne();    // Success case

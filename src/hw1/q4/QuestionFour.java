@@ -2,6 +2,13 @@ package hw1.q4;
 
 import java.util.Random;
 
+/*
+Ezekiel Quintanilla
+09/26/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class QuestionFour {
     // 4) Generate two random arrays of size n > 100 from a set S={'A', ‘C', 'T', 'G'}. Return the first index if you
     // can find only 4 consecutive "G's" in both the arrays at the same indexes. Experiment with different values
@@ -21,21 +28,9 @@ public class QuestionFour {
     public int questionFour(int n) {
         char[] sequenceOne = generateDnaSequence(n);
         char[] sequenceTwo = generateDnaSequence(n);
-//        char[] sequenceOne = {'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G'};
-//        char[] sequenceTwo = {'C', 'G', 'G', 'G', 'G', 'A', 'G', 'G', 'G', 'G', 'G'};
         int gSeqStart = 0;
         int gCount = 0;
         int index = 0;
-
-//        System.out.print("Sequence One: { ");
-//        for (char c : sequenceOne) {
-//            System.out.print(c + " ");
-//        }
-//        System.out.print("}\nSequence Two: { ");
-//        for (char c : sequenceTwo) {
-//            System.out.print(c + " ");
-//        }
-//        System.out.print("}\n");
 
         while (index < n && gCount < 4) {
             if (sequenceOne[index] == 'G' && gCount == 0) {
