@@ -2,7 +2,6 @@ package hw1.q3;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Arrays;
 
 /*
 Ezekiel Quintanilla
