@@ -56,3 +56,37 @@
   - abstract keyword
   - `final`, `finally{}`, `finalize()`
   - interfaces
+
+=============================\
+**Interfaces (10/3/2022)**
+- Concept
+  - Interfaces allow separate components to interact and receive information without revealing how that information is generated
+  - Hospital departments example
+- Anonymous Classes
+  - Alonso Church - Lambda Calculus
+  - Classes/functions made in line that only exist for the short time they are needed then removed from memory
+- Exception Handling
+  - Two types of bugs, syntactic and logic
+  - Two types of exceptions: Synchronous and Asynchronous
+  - Find the problem (**try** code but hit the exception)
+  - Inform that an error has occurred (**throw** the exception)
+  - Receive the error information (**catch** the exception)
+  - Take corrective action (**handle** the exception)
+  - Anticipated exceptions are called Check Exceptions.
+  - Unanticipated exceptions are Errors. (Unchecked exceptions)
+  - Use try{}catch{} when using File IO for homework.
+- Java Collections Framework
+  - A list of well-defined interfaces for containers
+    - Stack
+    - Queue
+    - Heap
+    - Map
+    - Hashmap
+    - Priority Queue
+    - Vector
+    - ArrayList
+    - Bulk Operations
+    - Interface Array Operations
+
+=============================\
+**Java Collections Framework (10/10/2022)**
