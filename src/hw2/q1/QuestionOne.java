@@ -13,7 +13,7 @@ public class QuestionOne {
         Array = [3, 5, -26, 7, 8, 10, 1, 8, 1, 2]
         Duplicate Entries: 8,1
     */
-    public int[] generateArray(int n) {
+    private int[] generateArray(int n) {
         Random rand = new Random();
         int[] answer = new int[n];
         for (int i = 0; i < n; i++) {
@@ -24,6 +24,10 @@ public class QuestionOne {
 
     public void findDuplicates(int n) {
         int[] intArray = generateArray(n);
+        for (int i = 0; i < n; i++) {
+            System.out.print(intArray[i] + " ");
+        }
+        System.out.println();
 
     }
 }
