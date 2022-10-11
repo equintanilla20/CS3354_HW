@@ -90,3 +90,37 @@
 
 =============================\
 **Java Collections Framework (10/10/2022)**
+- Collections
+  - Collections vs Maps
+    - Collections are linear
+  - Vectors (in mathematics)
+    - Define a point in space. Have some parameters, IE: magnitude and direction
+    - A = \[x1, y1]
+    - Tensors are generalized vectors
+  - Set
+    - Group of unique items
+  - Serializable collections.
+  - Iterators
+  - Collection is interface (1st Take Home Message)
+  - Collections is a class you can use (2nd Take Home Message)
+  - Bulk Methods / Operations
+  - toArray: bridges between collections objects and older APIs
+  - List - Linearly Ordered sequence of items
+    - `List l1 = new ArrayList();` is the easiest to use
+  - Queue: First in First Out
+    - Use PriorityQueue for final assignment
+    - `Queue q1 = new ArrayDeque();` is the easiest to use
+  - Map: A non-linear collection of key value pairs. `<K, V>`
+    - Lost of implementations
+    - Hashmap
+      - `Map m1 = new HashMap();`
+    - Hashtable 
+      - Pigeon Hole Principle
+        - Squishing a space down to a small space (Naked space? Embedded space?)
+        - Similar to Hashmap but more useful because of multithreading. Synchronizes input.
+  - Logging
+    - `private final static Logger LOGGER = Logger.getLogger(loggingTest.class.getName());`
+    - `LoggingTest loggingTest = new LoggingTest();`
+    - Singleton
+    - 
+      
