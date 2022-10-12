@@ -21,40 +21,45 @@ public class QuestionThree {
     }
     public void maxProduct(int n) {
         int[] intArray = generateArray(n);
-        int max1 = -n - 1;
+        int max1 = -n;
+        int maxPos1 = -n;
         int max2 = -n;
-        int min1 = n + 1;
+        int min1 = n;
+        int minPos1 = -1;
         int min2 = n;
         int product;
+
         System.out.println("Array for Max Product: ");
         for (int i = 0; i < n; i++) {
             System.out.print(intArray[i] + " ");
         }
         System.out.println();
+
         for (int i = 0; i < n; i++) {
             if (intArray[i] > max1) {
                 max1 = intArray[i];
-            }
-            if (max1 > intArray[i] && intArray[i] > max2) {
-                max2 = intArray[i];
+                maxPos1 = i;
             }
             if (intArray[i] < min1) {
                 min1 = intArray[i];
+                minPos1 = i;
             }
-            if (min1 < intArray[i] && intArray[i] < min2) {
+        }
+        for (int i = 0; i < n; i++) {
+            if (intArray[i] > max2 && maxPos1 != i) {
+                max2 = intArray[i];
+            }
+            if (intArray[i] < min2 && minPos1 != i) {
                 min2 = intArray[i];
             }
         }
-        System.out.println("Max1: " + max1);
-        System.out.println("Max2: " + max2);
-        System.out.println("Min1: " + min1);
-        System.out.println("Min2: " + min2);
-        if (max1*max2 > min1*min2) {
+
+        if ((max1 * max2) > (min1 * min2)) {
             product = max1 * max2;
-            System.out.println("Max product is " + max1 + "*" + max2 + ": " + product);
+            System.out.println("Max product is " + max1 + " * " + max2 + ": " + product);
         } else {
             product = min1 * min2;
-            System.out.println("Max product is " + min1 + "*" + min2 + ": " + product);
+            System.out.println("Max product is (" + min1 + ") * (" + min2 + "): " + product);
         }
     }
 }

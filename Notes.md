@@ -122,5 +122,3 @@
     - `private final static Logger LOGGER = Logger.getLogger(loggingTest.class.getName());`
     - `LoggingTest loggingTest = new LoggingTest();`
     - Singleton
-    - 
-      
