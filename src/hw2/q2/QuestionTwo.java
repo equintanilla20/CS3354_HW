@@ -11,6 +11,7 @@ public class QuestionTwo {
         maximum: 10
         minimum: -26
     */
+
     private int[] generateArray(int n) {
         Random rand = new Random();
         int[] answer = new int[n];

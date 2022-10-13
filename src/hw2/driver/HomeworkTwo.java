@@ -22,5 +22,4 @@ public class HomeworkTwo {
         System.out.println("\n===== Multiplication =====");
         q5.matrixMultiplication(2, 3, 2);
     }
-
 }

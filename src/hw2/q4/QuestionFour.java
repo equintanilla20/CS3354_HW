@@ -10,5 +10,6 @@ public class QuestionFour {
         3) when it was last modified,
         4) is the file text or binary.
         Hint: First look the root File and get its metadata using the File Object (as discussed in the class)
+        https://www.geeksforgeeks.org/java-program-to-traverse-in-a-directory/
      */
 }

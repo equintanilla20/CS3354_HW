@@ -11,6 +11,7 @@ public class QuestionThree {
         Array = [2, 3, 5, 7, -7, 5, 8, -5]
         Pair is (7, 8), Maximum Product: 56
      */
+
     private int[] generateArray(int n) {
         Random rand = new Random();
         int[] answer = new int[n];
