@@ -2,6 +2,13 @@ package hw2.q2;
 
 import java.util.Random;
 
+/*
+Ezekiel Quintanilla
+10/14/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class QuestionTwo {
     /*
         2. Create an array of size N. The user supplies N. Use random integers to fill the array. Find

@@ -2,6 +2,13 @@ package hw2.q3;
 
 import java.util.Random;
 
+/*
+Ezekiel Quintanilla
+10/14/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class QuestionThree {
     /*
         3. Create an array of size N. The user supplies N. Use random integers to fill the array. Write a
@@ -22,12 +29,9 @@ public class QuestionThree {
     }
     public void maxProduct(int n) {
         int[] intArray = generateArray(n);
-        int max1 = -n;
-        int maxPos1 = -n;
-        int max2 = -n;
-        int min1 = n;
-        int minPos1 = -1;
-        int min2 = n;
+        int max1 = -n, min1 = n;
+        int max2 = -n, min2 = n;
+        int maxPos1 = -1, minPos1 = -1;
         int product;
 
         System.out.println("Array for Max Product: ");
@@ -36,6 +40,7 @@ public class QuestionThree {
         }
         System.out.println();
 
+        // First Max / Min
         for (int i = 0; i < n; i++) {
             if (intArray[i] > max1) {
                 max1 = intArray[i];
@@ -46,6 +51,8 @@ public class QuestionThree {
                 minPos1 = i;
             }
         }
+
+        // Second Max/Min
         for (int i = 0; i < n; i++) {
             if (intArray[i] > max2 && maxPos1 != i) {
                 max2 = intArray[i];

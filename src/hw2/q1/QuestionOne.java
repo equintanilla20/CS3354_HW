@@ -2,6 +2,13 @@ package hw2.q1;
 
 import java.util.Random;
 
+/*
+Ezekiel Quintanilla
+10/14/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class QuestionOne {
     /*
         1. Create a random array of size N (N=50). The user supplies parameter N. Use random integers
