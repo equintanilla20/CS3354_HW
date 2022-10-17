@@ -58,7 +58,6 @@ public class QuestionFour {
 
     public void getRootThenList() {
         String windowsPath = "C:\\Users\\eqdev\\Documents\\dev\\";
-//        String macPath = "tbd";
         String root = windowsPath + "CS3354_HW\\src\\hw2\\q4\\rootDir";
         File[] files = new File(root).listFiles();
         System.out.println("Root: " + root);

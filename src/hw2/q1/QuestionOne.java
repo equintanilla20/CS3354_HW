@@ -20,27 +20,37 @@ public class QuestionOne {
         Array = [3, 5, -26, 7, 8, 10, 1, 8, 1, 2]
         Duplicate Entries: 8,1
     */
-
+    private static final int UPPER_BOUND = 100;
     private int[] generateArray(int n) {
         Random rand = new Random();
         int[] answer = new int[n];
         for (int i = 0; i < n; i++) {
-            answer[i] = rand.nextInt(10) + 1;
+            answer[i] = rand.nextInt(UPPER_BOUND) + 1;
         }
         return answer;
     }
 
     public void findDuplicates(int n) {
         int[] intArray = generateArray(n);
-        int[] dupes = new int[n];
-        for (int i = 0; i < n; i++) {
-            dupes[intArray[i]%n] = intArray[i];
-            System.out.print(intArray[i] + " ");
+        int[] duplicates = new int[UPPER_BOUND + 1];
+        int dupeCount = 0;
+
+        System.out.print("Initial Array: ");
+        for (int item : intArray) {
+            duplicates[item]++;
+            System.out.print(item + " ");
         }
-        System.out.println();
-        for (int i = 0; i < n; i++) {
-            System.out.print(i + " ");
+
+        System.out.print("\nDuplicates: ");
+        for (int i = 0; i < duplicates.length; i++) {
+            if (duplicates[i] > 1) {
+                dupeCount++;
+                System.out.print(i + " ");
+            }
         }
+
+        if (dupeCount < 1)
+            System.out.print("No duplicates found!");
         System.out.println();
     }
 }

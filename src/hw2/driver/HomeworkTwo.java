@@ -70,6 +70,11 @@ public class HomeworkTwo {
         // Get User Input
         System.out.print("Enter Array Size: ");
         int userInt = userInput.nextInt();
+        while (userInt <= 0) {
+            System.out.println("Invalid input!");
+            System.out.print("Please enter a number: ");
+            userInt = userInput.nextInt();
+        }
 
         // Run Test
         preFunctionMillis = System.currentTimeMillis();
@@ -123,11 +128,29 @@ public class HomeworkTwo {
         // Get User Input
         System.out.print("Enter Number of Rows for Matrix 1: ");
         userIntN = userInput.nextInt();
+        while (userIntN <= 0) {
+            System.out.println("Invalid input!");
+            System.out.print("Enter Number of Rows for Matrix 1: ");
+            userIntN = userInput.nextInt();
+        }
+
         System.out.println("Enter Number of Columns for");
         System.out.print("Matrix 1 and rows of Matrix 2: ");
         userIntM = userInput.nextInt();
+        while (userIntM <= 0) {
+            System.out.println("Invalid input!");
+            System.out.println("Enter Number of Columns for");
+            System.out.print("Matrix 1 and rows of Matrix 2: ");
+            userIntM = userInput.nextInt();
+        }
+
         System.out.print("Enter Number of Columns for Matrix 2: ");
         int userIntO = userInput.nextInt();
+        while (userIntO <= 0) {
+            System.out.println("Invalid input!");
+            System.out.print("Enter Number of Columns for Matrix 2: ");
+            userIntO = userInput.nextInt();
+        }
 
         preFunctionMillis = System.currentTimeMillis();
         q5.matrixMultiplication(userIntN, userIntM, userIntO);
@@ -139,19 +162,29 @@ public class HomeworkTwo {
         HomeworkTwo hw2 = new HomeworkTwo();
         System.out.println("HOMEWORK TWO");
         System.out.println("Ezekiel Quintanilla");
-//        // Question 1
-//        hw2.runQuestionOne();
-//
-//        // Question 2
-//        hw2.runQuestionTwo();
-//
-//        // Question 3
-//        hw2.runQuestionThree();
-//
-//        // Question 4
-        hw2.runQuestionFour();
+        // Question 1
+        hw2.runQuestionOne();       // Positive Case
+        hw2.runQuestionOne();       // Positive Case
+        hw2.runQuestionOne();       // Negative Case
+
+        // Question 2
+        hw2.runQuestionTwo();       // Positive Case
+        hw2.runQuestionTwo();       // Positive Case
+        hw2.runQuestionTwo();       // Negative Case
+
+        // Question 3
+        hw2.runQuestionThree();     // Positive Case
+        hw2.runQuestionThree();     // Positive Case
+        hw2.runQuestionThree();     // Negative Case
+
+        // Question 4
+        hw2.runQuestionFour();      // Positive Case
+        hw2.runQuestionFour();      // Positive Case
+        hw2.runQuestionFour();      // Negative Case
 
         // Question 5
-//        hw2.runQuestionFive();
+        hw2.runQuestionFive();      // Positive Case
+        hw2.runQuestionFive();      // Positive Case
+        hw2.runQuestionFive();      // Negative Case
     }
 }

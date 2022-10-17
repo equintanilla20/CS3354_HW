@@ -40,13 +40,13 @@ public class QuestionFive {
             }
         }
 
-        System.out.println("Matrix 1:");
+        System.out.println("\nMatrix 1:");
         printMatrix(matrixOne);
 
-        System.out.println("Matrix 2:");
+        System.out.println("\nMatrix 2:");
         printMatrix(matrixTwo);
 
-        System.out.println("Matrix sum:");
+        System.out.println("\nMatrix sum:");
         printMatrix(sum);
     }
 

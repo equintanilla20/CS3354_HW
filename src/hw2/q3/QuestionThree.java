@@ -39,7 +39,6 @@ public class QuestionThree {
             System.out.print(intArray[i] + " ");
         }
         System.out.println();
-
         // First Max / Min
         for (int i = 0; i < n; i++) {
             if (intArray[i] > max1) {
@@ -51,7 +50,6 @@ public class QuestionThree {
                 minPos1 = i;
             }
         }
-
         // Second Max/Min
         for (int i = 0; i < n; i++) {
             if (intArray[i] > max2 && maxPos1 != i) {
@@ -61,7 +59,6 @@ public class QuestionThree {
                 min2 = intArray[i];
             }
         }
-
         if ((max1 * max2) > (min1 * min2)) {
             product = max1 * max2;
             System.out.println("Max product is " + max1 + " * " + max2 + ": " + product);
