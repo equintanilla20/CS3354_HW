@@ -122,3 +122,38 @@
     - `private final static Logger LOGGER = Logger.getLogger(loggingTest.class.getName());`
     - `LoggingTest loggingTest = new LoggingTest();`
     - Singleton
+
+=============================\
+**Logging / EXAM ON 10/24/2022**
+- Exam:
+  - 3 total hours
+  - Multiple Choice
+    - 25 Questions, Only 1 Correct Answer
+    - 2 point each 25 points total
+  - Short Answer
+    - 4 Questions. Be descriptive as possible
+    - 5 points each, 20 total
+  - Coding Questions
+    - Two straightforward questions, one difficult question 
+    - 10 points each, 30 total
+- Creating a Logger
+  - Using `System.out.println();` is resource intensive on the CPU.
+  - Using `java.util.logging` simplifies all the printing functionality.
+  - Singleton pattern: `private final static Logger LOGGER = Logger.getLogger(loggingTest.class.getName());`
+    - Singleton pattern returns one memory address
+    - *Static:* Means only one memory location.
+  - Handlers
+    - What is a stream?
+      - Stream: Abstract representation?
+      - Buffer: Memory buffer
+  - Log manager
+    - Hierarchical structure of Logger
+- Unit Testing
+  - Satisfiability Problem
+  - JUnit - Testing framework
+  - Mockito - Mock objects for testing
+  - JTest - Static code analysis
+  - "Extreme Programming" methodology
+  - Fixture
+    - *Setup* environment, variables etc
+    - *tearDown* remove everything that was set up
