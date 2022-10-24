@@ -31,7 +31,7 @@
     - File output always writes in bytes
         - `fseek()`, used to append data to end of file
     - Stream: A stream is an abstract representation of an input or output device that is a source of, or destination for, data.
-    - Buffer: A chunk of memory that holds data while being read or written. Flush when done ( BufferedStream.flush ).
+    - Buffer: A chunk of memory that holds data while being read or written. Flush when done ( `BufferedStream.flush` ).
     - Byte Stream: Contains binary data
     - Character Stream:
     - Input Stream (Audio, Files, Objects, Sequence of streams, ByteArray, Piped input stream)
@@ -72,7 +72,7 @@
   - Inform that an error has occurred (**throw** the exception)
   - Receive the error information (**catch** the exception)
   - Take corrective action (**handle** the exception)
-  - Anticipated exceptions are called Check Exceptions.
+  - Anticipated exceptions are called Checked Exceptions.
   - Unanticipated exceptions are Errors. (Unchecked exceptions)
   - Use try{}catch{} when using File IO for homework.
 - Java Collections Framework
