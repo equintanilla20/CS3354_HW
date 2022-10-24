@@ -82,6 +82,7 @@
     - Heap
     - Map
     - Hashmap
+    - Hashtable
     - Priority Queue
     - Vector
     - ArrayList
