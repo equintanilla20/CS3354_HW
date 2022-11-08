@@ -221,3 +221,80 @@
       - In some sense, a graphical representation of functional behavior
     - Deployment Diagram
     - Behavioral Diagrams
+
+=============================\
+**Concurrency (11/07/2022)**
+- Analogy:
+  - Opening laptop and reading email while also listening to music
+    - Our attention is actually only paid to one task at a time
+  - 4 way stop: Handles cars in a FCFS manner, appears to be running all four directions concurrently
+- User -> Linux (VM) -> Windows > Hardware
+- JVM (Emulates OS) -> Windows
+  - JVM is light. Much lighter than Linux.
+  - JVM runs on one process.
+- Types of Processing
+  - Multiprogramming
+    - Multi processes on single processor
+  - Multiprocessing
+    - Multi processes on multi processors
+  - Distributed processing
+    - multi processes on multi systems
+  - Three C's
+    - Cooperation
+    - Competition
+    - Communication
+- Processes & Threads
+  - In an OS:
+    - User Space: Shell, Application layers, file system, and processes management
+    - Kernel Space: Kernal (Untouchable by the user)
+    - Hardware under kernel and user space.
+  - JVM is a process in the process manager
+  - A thread emulates a process in the context of one java process
+    - A lightweight process in the JVM
+    - Round robin scheduling
+  - Process context:
+    - PID, state (runningm sleeping, waiting, etc)
+    - Memory Space
+    - Procedure call stack
+    - Open files, ports, connections through the kernel
+    - Registers and counters:
+      - Program counter, stack pointer
+      - Generl purpose registers
+  - Process is a complex data structure
+  - Making an OS is not easy
+- Main states of a processes:
+  - Create:
+    - Moves to Ready state 
+  - Ready
+  - Running
+  - Waiting
+  - Terminate
+- Check out 8_Sched.pptx from CS3360
+- Interprocess Communication (Using pipes and sockets).
+  - Shared Memory:
+    - Two processes sharing messages by writing and reading from a common memory location
+    - Shared memory is in the heap. Stack belongs to processes, heap is unbounded by the processes.
+  - Direct Communication (Message Queue Technique):
+    - Two processes send and receive messages directly.
+    - Kernel has message queue space
+- Threads
+  - Very similar to a process.
+  - Exist in different states emulating processes
+  - Threads share process's resources , including memory and open files
+  - There is always one default thread as part of the process
+  - In Java:
+    - Object class has the following concurrency related methods:
+      - `wait()`
+      - `notify()`
+      - `notifyAll()`
+    - Thread inherits from object
+    - Some class `Mars` inheriting from object receives the concurrency methods
+      - Can communicate with `Jupiter` using those methods
+    - Start a thread by using an object called `Thread`
+    - Extend a class `A` from `Thread`, it is a thread.
+      - `A` now has `start()` and `run()`
+  - `Start()` calls / allows `run()` method to run for a thread.
+  - `Runnable` is an interface
+  - Professor prefers `implements Runnable` 
+  - `start()` will spawn a thread. If a `for()` loop runs 10 times and creates threads each iteration, 10 threads will be created immediately.
+  - JVM size increases, borrowing from the heap as we add threads
