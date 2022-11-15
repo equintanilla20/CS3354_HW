@@ -253,13 +253,13 @@
     - A lightweight process in the JVM
     - Round robin scheduling
   - Process context:
-    - PID, state (runningm sleeping, waiting, etc)
+    - PID, state (running, sleeping, waiting, etc)
     - Memory Space
     - Procedure call stack
     - Open files, ports, connections through the kernel
     - Registers and counters:
       - Program counter, stack pointer
-      - Generl purpose registers
+      - General purpose registers
   - Process is a complex data structure
   - Making an OS is not easy
 - Main states of a processes:
@@ -296,5 +296,58 @@
   - `Start()` calls / allows `run()` method to run for a thread.
   - `Runnable` is an interface
   - Professor prefers `implements Runnable` 
-  - `start()` will spawn a thread. If a `for()` loop runs 10 times and creates threads each iteration, 10 threads will be created immediately.
+  - `start()` will spawn a thread. If a `for()` loop runs 10 times and creates threads each iteration.
   - JVM size increases, borrowing from the heap as we add threads
+
+=============================\
+**Concurrency Pt 2 (11/14/2022)**
+- Estimate run time for threads by statement lines executed.
+  - "Thread was alive for one single print statement"
+  - "The other threads run 6-7 statements + 5 seconds of `sleep()` time"
+- Initial thread creation is ordered, but threads sit in the Main States Of A Process diagram and can be dispatched/scheduled differently
+- Illegal Thread State Exception
+  - Using `thread1.start()` twice throws an error
+  - Race conditions
+  - `Thread th1 = new Thread();`
+  - `sleep()` is very useful in threads.
+    - Can sleep an ifninite time.
+  - Always run `Thread.sleep()` in try and catch block
+    - Thread can be interrupted.
+    - May not always sleep x amount of seconds
+    - As soon as interrupt comes in, it generates an InterruptedException and continues processing statements
+    - Can be used to simulate some process execution time (like real time event simulator)
+- Thread Interrupts
+  - Stop, wake up, etc.
+  - Can send interrupts to threads with `Thread.interrupt()`
+  - Flags in the global scope: Interrupt flag initially false, is set to true when a thread is interrupted
+    - Java is polling the interrupt flag for the thread "are you false?" "are you false?" "are you false?"
+  - JVM and only the JVM has the authority to stop a thread.
+  - `Thread.interrupted` checks the value of the interrupted flag and *resets the value to false*.
+- Thread Join
+  - Causes a thread to halt execution, enter a sleep state, and wait for another thread's completion.
+  - Potentially more graceful than interrupting a sleeping thread.
+  - Effectively use in distributed processing.
+- Ending a thread
+  - Do it gracefully, never use `stop()`
+  - UsingInterruptToShutdownThread
+  - Thread.interrupt() and Thread.interrupted() both reset the interrupt flag because they "peek" at its value.
+- Advanced Topics
+  - Thread executors, process control concepts, Synchronization and locking, thread groups
+  - Problem (Producer & Consumer)
+    - `Synchronized(this) { //code };`
+    - Producer thread writes to shared memory, consumer reads from that memory
+    - Producer runs infinite loop adding values to a linked list IF the list isn't full. If it is full, it uses `wait()`. If not, it adds value and uses `notify()` to tell the consumer it has added a value then sleeps.
+    - Consumer runs infinite loop consumes a value removing it from the linked list then notifies the producer.
+    - IMPORTANT, study this and how threads communicate thanks to Java.
+  - Critical Section Problem (See other class's slides)
+    - Critical Section is a part of the code where a processes is using a shared resource (shared memory, table, file, etc)
+    - Mutual Exclusion, Progress, Bounded Waiting
+    - Mutex
+    - Deadlocks
+    - Lock: Every object has a `lock` flag. Tool for controlling shared resources.
+    - Synchronization: Essential for locking, communication between threads
+      - Method level synchronization (Entire method or block of code)
+      - Statement level synchronization
+      - Can synchronize entire blocks of code
+      - Replaces mutex/semaphore/critical section stuff. Java handles it.
+      - Locks and unlocks the `lock` flag of an object.
