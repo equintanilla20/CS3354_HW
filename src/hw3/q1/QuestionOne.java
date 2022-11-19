@@ -9,12 +9,17 @@ public class QuestionOne {
             p + q = -b/a and pq = c/a
     for non-trivial a, b, c. Make sure that you address that complex numbers as objects.
     */
-    public void analyzeFormula(int a, int b, int c) {
-        Formula formula = new Formula(a, b, c);
-        formula.findPQ();
-        formula.showBOverA();
-        formula.showPPlusQ();
-        formula.showCOverA();
-        formula.showPTimesQ();
+    public void analyzeFormula(double a, double b, double c) {
+        if (!isNumComplex(a, b, c)) {
+            NumberQ1 realNum = new RealNumber(a, b, c);
+            realNum.reportPQ();
+        } else {
+            NumberQ1 complexNum = new ComplexNumber(a, b, c);
+            complexNum.reportPQ();
+        }
+    }
+
+    private boolean isNumComplex(double a, double b, double c) {
+        return ((b * b) - 4 * a * c) < 0;
     }
 }
