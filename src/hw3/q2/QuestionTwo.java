@@ -12,19 +12,19 @@ public class QuestionTwo {
     string and determines if it is valid or not. Return True for valid string, otherwise return False.
     */
     public boolean isValid(String input) {
-        Map<Character, Integer> alphabet = new HashMap<>();
+        Map<Character, Integer> letters = new HashMap<>();
         int prev;
         int tooManyCount = 0;
 
         for (int i = 0; i < input.length(); i++) {
-            alphabet.merge(input.charAt(i), 1, Integer::sum);
+            letters.merge(input.charAt(i), 1, Integer::sum);
         }
-        System.out.println(alphabet);
-        prev = alphabet.get(input.charAt(0));
-        for (Map.Entry<Character, Integer> c : alphabet.entrySet()) {
+        System.out.println(letters);
+        prev = letters.get(input.charAt(0));
+        for (Map.Entry<Character, Integer> c : letters.entrySet()) {
             if (c.getValue() == (prev + 1) || c.getValue() == (prev - 1)) {
                 tooManyCount++;
-                System.out.println(tooManyCount);
+//                System.out.println(tooManyCount);
             } else if (c.getValue() > (prev + 1) || c.getValue() < (prev - 1)) {
                 return false;
             }

@@ -1,5 +1,9 @@
 =============================\
-**Method Naming Convention (09/12/2022)**
+**FIRST SECTION OF COURSE**
+=============================\
+
+=============================\
+### **Method Naming Convention (09/12/2022)**
 - "Type means 'domain'"
 - CamelCase
 - Java supports overloading methods
@@ -17,7 +21,7 @@
     - Anonymous Classes
 
 =============================\
-**Java I/O (09/19/2022)**
+### **Java I/O (09/19/2022)**
 - HW 1
 - Problem - Code printed with line numbers
 - Results: 2 positive test cases, 1 negative test case (invalid input)
@@ -44,7 +48,7 @@
 - HAS_A relationship
 
 =============================\
-**Inheritance (09/26/2022)**
+### **Inheritance (09/26/2022)**
 - Polymorphism
   - Compile time polymorphism
   - Runtime polymorphism
@@ -58,7 +62,7 @@
   - interfaces
 
 =============================\
-**Interfaces (10/3/2022)**
+### **Interfaces (10/3/2022)**
 - Concept
   - Interfaces allow separate components to interact and receive information without revealing how that information is generated
   - Hospital departments example
@@ -90,7 +94,7 @@
     - Interface Array Operations
 
 =============================\
-**Java Collections Framework (10/10/2022)**
+### **Java Collections Framework (10/10/2022)**
 - Collections
   - Collections vs Maps
     - Collections are linear
@@ -125,7 +129,7 @@
     - Singleton
 
 =============================\
-**Logging / EXAM ON 10/24/2022**
+### **Logging / EXAM ON 10/24/2022**
 - Exam:
   - 3 total hours
   - Multiple Choice
@@ -164,7 +168,7 @@
 =============================\
 
 =============================\
-**Unified Modeling Language (10/31/2022)**
+### **Unified Modeling Language (10/31/2022)**
 - UML Diagram illustrates the structure of a program in detail
   - Multiple layers from system wide down to individual components
   - Product Managers manage relationship between the client and functional components of project.
@@ -223,7 +227,7 @@
     - Behavioral Diagrams
 
 =============================\
-**Concurrency (11/07/2022)**
+### **Concurrency (11/07/2022)**
 - Analogy:
   - Opening laptop and reading email while also listening to music
     - Our attention is actually only paid to one task at a time
@@ -300,7 +304,7 @@
   - JVM size increases, borrowing from the heap as we add threads
 
 =============================\
-**Concurrency Pt 2 (11/14/2022)**
+### **Concurrency Pt 2 (11/14/2022)**
 - Estimate run time for threads by statement lines executed.
   - "Thread was alive for one single print statement"
   - "The other threads run 6-7 statements + 5 seconds of `sleep()` time"
@@ -351,3 +355,50 @@
       - Can synchronize entire blocks of code
       - Replaces mutex/semaphore/critical section stuff. Java handles it.
       - Locks and unlocks the `lock` flag of an object.
+
+=============================\
+### **Concurrency Pt 3 (11/21/2022)**
+- Lock
+  - Use `Synchronized(this) {}` to handle locks inherent in every object when dealing with multiple threads sharing a resource
+- Re-entrant Synchronization (Don't worry about this)
+  - Thread cannot acquire a lock owned by another thread
+  - A thread can reacquire the same lock that it already owns.
+- Atomic Access
+  - An atomic action is one that effectively happens all at once.
+    - Acquiring a lock and incrementing is atomic
+- Liveness, three problems of concurrency
+  - Deadlock: two or more threads blocked forever, waiting for each other.
+    - Dining Philosopher problem
+  - Starvation: Holding onto resource for so long that other threads are waiting and waiting
+  - Livelock: Other variation of deadlock
+- Executors
+  - Thread Pools
+    - Consider using Java 18 Fork/Join/Thread Pool functionality
+- Callable
+  - Similar to Runnable but returns a value and can throw exceptions
+
+### **DESIGN PATTERNS**
+- Developed by Beck and Cunningham back in 1987
+- Gamma, Erich; Helm, Richard; Johnson, Ralph; Vlissides, John;
+  - "Design Patterns: Elements of Reusable Object-Oriented Software"
+- Types of Patterns
+  - Two main patterns: Inheritance and Composite (see below). The two pillars of object oriented design.
+  I. Creational Design Pattern
+    - Ensure you are creating an object in the best possible way with checks and balances before reaching the `new` keyword.
+    - Dependency Injection?
+    A. [Singleton](https://www.geeksforgeeks.org/singleton-design-pattern/)* - Single instance of a class allowed. Example: Logger.
+    B. [Factory](https://www.geeksforgeeks.org/factory-design-pattern/)* - Builds objects without specifying everything necessary
+    C. [Builder](https://www.geeksforgeeks.org/builder-pattern-in-java/)* - Builds objects incrementally
+      - Controls how many parameters we want to set
+      - Some attributes are needed for building, some are optional. Builders allow us to choose.
+    D. [Prototype](https://www.geeksforgeeks.org/prototype-design-pattern/)* - Used in cloning for new objects
+      - Shallow vs Deepy Copying
+    E. [Abstract Factory](https://www.geeksforgeeks.org/abstract-factory-pattern/) - A factory that builds factories
+  II. Structural Design Pattern
+    A. [Adapter](https://www.geeksforgeeks.org/adapter-pattern/) - Connects unrelated interfaces
+    B. [Composite](https://www.geeksforgeeks.org/composite-design-pattern/)* - Tree hierarchy of objects that hold other objects
+    C. [Facade](https://www.geeksforgeeks.org/facade-design-pattern-introduction/) - "Mask to hide the details"
+      - Keep complications hidden 
+    D. [Bridge](https://www.geeksforgeeks.org/bridge-design-pattern/) - Prefer Composition over inheritance
+    E. [Proxy](https://www.geeksforgeeks.org/proxy-design-pattern/)
+  III. Behavioral Design Pattern
