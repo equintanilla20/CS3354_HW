@@ -4,6 +4,13 @@ import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+/*
+Ezekiel Quintanilla
+11/28/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class QuestionFour {
     /*
     4. Simulate 3-Queue System
@@ -60,14 +67,12 @@ public class QuestionFour {
 
         final Runnable agentA = () -> {
             while (finished < N) {
-                if (!queueA.isEmpty()) {
-                    synchronized(queueC) {
-                        if (queueC.size() < C_MAX && queueA.peek() != null)  {
-                            System.out.println("Agent A processing for: " + queueA.peek().getWaitTime() + " minute(s)");
-                            assert queueA.peek() != null;
-                            processPerson(queueA.peek().getWaitTime());
-                            queueC.add(queueA.remove());
-                        }
+                synchronized(queueC) {
+                    if (!queueA.isEmpty() && queueC.size() < C_MAX) {
+                        System.out.println("Agent A processing for: " + queueA.peek().getWaitTime() + " minute(s)");
+                        assert queueA.peek() != null;
+                        processPerson(queueA.peek().getWaitTime());
+                        queueC.add(queueA.remove());
                     }
                 }
             }
@@ -76,13 +81,11 @@ public class QuestionFour {
         final Runnable agentB = () -> {
             while (finished < N) {
                 synchronized (queueC) {
-                    if (!queueB.isEmpty()) {
-                        if (queueC.size() < C_MAX) {
-                            System.out.println("Agent B processing for: " + queueB.peek().getWaitTime() + " minute(s)");
-                            assert queueB.peek() != null;
-                            processPerson(queueB.peek().getWaitTime());
-                            queueC.add(queueB.remove());
-                        }
+                    if (!queueB.isEmpty() && queueC.size() < C_MAX) {
+                        System.out.println("Agent B processing for: " + queueB.peek().getWaitTime() + " minute(s)");
+                        assert queueB.peek() != null;
+                        processPerson(queueB.peek().getWaitTime());
+                        queueC.add(queueB.remove());
                     }
                 }
             }
@@ -105,5 +108,7 @@ public class QuestionFour {
             System.out.println("All people processed!");
         };
         new Thread(agentC).start();
+        Thread.sleep(1000);
     }
+
 }

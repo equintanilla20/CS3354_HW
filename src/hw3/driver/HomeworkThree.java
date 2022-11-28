@@ -6,6 +6,12 @@ import hw3.q3.QuestionThree;
 import hw3.q4.QuestionFour;
 import java.util.Scanner;
 
+/*
+Ezekiel Quintanilla
+11/28/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
 
 public class HomeworkThree {
     Scanner userInput = new Scanner(System.in);
@@ -129,6 +135,6 @@ public class HomeworkThree {
         hw3.runQuestionFour();     // Case 2
         hw3.runQuestionFour();     // Case 3
 
-        System.out.println("End HW3");
+        System.out.println("\nEnd HW3");
     }
 }

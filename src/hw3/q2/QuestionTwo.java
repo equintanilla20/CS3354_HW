@@ -3,12 +3,16 @@ package hw3.q2;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+Ezekiel Quintanilla
+11/28/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class QuestionTwo {
     /*
-    2. Strange string validity of Hercule Poirot
-    Mr. Hercule Poirot considers a string to be valid if all characters of the string appear the same number of
-    times. In his opinion it is also valid if he can remove just character at index in the string, and the
-    remaining characters will occur the same number of times. Write a Java method (isValid) that takes a
+    2. Write a Java method (isValid) that takes a
     string and determines if it is valid or not. Return True for valid string, otherwise return False.
     */
     public boolean isValid(String input) {
@@ -24,7 +28,6 @@ public class QuestionTwo {
         for (Map.Entry<Character, Integer> c : letters.entrySet()) {
             if (c.getValue() == (prev + 1) || c.getValue() == (prev - 1)) {
                 tooManyCount++;
-//                System.out.println(tooManyCount);
             } else if (c.getValue() > (prev + 1) || c.getValue() < (prev - 1)) {
                 return false;
             }

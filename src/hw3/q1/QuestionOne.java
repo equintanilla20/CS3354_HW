@@ -1,5 +1,12 @@
 package hw3.q1;
 
+/*
+Ezekiel Quintanilla
+11/28/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class QuestionOne {
     /*
     1. Quadratic Equation

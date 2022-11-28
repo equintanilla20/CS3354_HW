@@ -2,6 +2,13 @@ package hw3.q1;
 
 import static java.lang.Math.sqrt;
 
+/*
+Ezekiel Quintanilla
+11/28/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class RealNumber extends NumberQ1 {
     private double p;
     private double q;

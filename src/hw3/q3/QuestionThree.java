@@ -3,6 +3,13 @@ package hw3.q3;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+Ezekiel Quintanilla
+11/28/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
+
 public class QuestionThree {
     /*
     3. Find common substrings

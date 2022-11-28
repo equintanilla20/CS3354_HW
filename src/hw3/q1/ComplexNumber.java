@@ -1,7 +1,13 @@
 package hw3.q1;
 
-
 import static java.lang.Math.abs;
+
+/*
+Ezekiel Quintanilla
+11/28/2022
+CS 3354: Object-Oriented Design and Programming
+S Roychowdhury
+*/
 
 public class ComplexNumber extends NumberQ1 {
     private String complexP;
