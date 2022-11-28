@@ -108,7 +108,7 @@ public class QuestionFour {
             System.out.println("All people processed!");
         };
         new Thread(agentC).start();
-        Thread.sleep(1000);
+        Thread.sleep(10000);
     }
 
 }
