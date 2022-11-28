@@ -1,6 +1,8 @@
 package hw3.q1;
 
 
+import static java.lang.Math.abs;
+
 public class ComplexNumber extends NumberQ1 {
     private String complexP;
     private String complexQ;
@@ -16,14 +18,14 @@ public class ComplexNumber extends NumberQ1 {
 
     protected void findPQ() {
         double sqrtValue = (b * b) - 4 * a * c;
-        complexP = "(" + -b + " + sqrt(" + df.format(sqrtValue) + ")i) / " + df.format((2*a));
-        complexQ = "(" + -b + " - sqrt(" + df.format(sqrtValue) + ")i) / " + df.format((2*a));
+        complexP = "(" + -b + " - sqrt(" + df.format(abs(sqrtValue)) + ")i) / " + df.format((2*a));
+        complexQ = "(" + -b + " + sqrt(" + df.format(abs(sqrtValue)) + ")i) / " + df.format((2*a));
     }
 
     public void reportPQ() {
-        System.out.println("\n-b / a = " + df.format((-b / a)));          // Show -b / a
+        System.out.println("\n-b / a = " + df.format((-b / a)));        // Show -b / a
         System.out.println(" p + q = " + complexP + " + " + complexQ);  // Show  p + q
-        System.out.println("\n c / a = " + df.format(( c / a)));          // Show  c / a
+        System.out.println("\n c / a = " + df.format(( c / a)));        // Show  c / a
         System.out.println(" p * q = " + complexP + " * " + complexQ);  // Show  p * q
     }
 }

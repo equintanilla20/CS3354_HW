@@ -8,7 +8,6 @@ abstract class NumberQ1 {
     double b;
     double c;
 
-
     NumberQ1(double a, double b, double c) {
         this.a = a;
         this.b = b;
