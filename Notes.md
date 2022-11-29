@@ -170,7 +170,7 @@
 =============================\
 ### **Unified Modeling Language (10/31/2022)**
 - UML Diagram illustrates the structure of a program in detail
-  - Multiple layers from system wide down to individual components
+  - Multiple layers from system-wide down to individual components
   - Product Managers manage relationship between the client and functional components of project.
     - Client -> Product Manager -> Functional Components -> Architecture -> Teams -> Development -> Deployment
       - Outbound <-> Inbound -> Functional Components
@@ -179,9 +179,9 @@
     - Characterizes things in a system and their static relationships to each other.
     - Shows the static structure of a system, the kinds of things that exist, internal structure, and relationships.
     - Top level constituents of a static view:
-      - classifers (class, interface, data type)
+      - Classifiers (class, interface, data type)
       - relationships (association, generalization, dependency, realization)
-      - constratins
+      - Constraints
       - comments
     - Relationships:
       - Bidirectional association between class A <-> B
@@ -314,7 +314,7 @@
   - Race conditions
   - `Thread th1 = new Thread();`
   - `sleep()` is very useful in threads.
-    - Can sleep an ifninite time.
+    - Can sleep an infinite time.
   - Always run `Thread.sleep()` in try and catch block
     - Thread can be interrupted.
     - May not always sleep x amount of seconds
@@ -344,7 +344,7 @@
     - Consumer runs infinite loop consumes a value removing it from the linked list then notifies the producer.
     - IMPORTANT, study this and how threads communicate thanks to Java.
   - Critical Section Problem (See other class's slides)
-    - Critical Section is a part of the code where a processes is using a shared resource (shared memory, table, file, etc)
+    - Critical Section is a part of the code where a processes are using a shared resource (shared memory, table, file, etc)
     - Mutual Exclusion, Progress, Bounded Waiting
     - Mutex
     - Deadlocks
@@ -382,7 +382,7 @@
 - Gamma, Erich; Helm, Richard; Johnson, Ralph; Vlissides, John;
   - "Design Patterns: Elements of Reusable Object-Oriented Software"
 - Types of Patterns
-  - Two main patterns: Inheritance and Composite (see below). The two pillars of object oriented design.
+  - Two main patterns: Inheritance and Composite (see below). The two pillars of object-oriented design.
   I. Creational Design Pattern
     - Ensure you are creating an object in the best possible way with checks and balances before reaching the `new` keyword.
     - Dependency Injection?
@@ -392,13 +392,65 @@
       - Controls how many parameters we want to set
       - Some attributes are needed for building, some are optional. Builders allow us to choose.
     D. [Prototype](https://www.geeksforgeeks.org/prototype-design-pattern/)* - Used in cloning for new objects
-      - Shallow vs Deepy Copying
+      - Shallow vs Deep Copying
     E. [Abstract Factory](https://www.geeksforgeeks.org/abstract-factory-pattern/) - A factory that builds factories
   II. Structural Design Pattern
     A. [Adapter](https://www.geeksforgeeks.org/adapter-pattern/) - Connects unrelated interfaces
     B. [Composite](https://www.geeksforgeeks.org/composite-design-pattern/)* - Tree hierarchy of objects that hold other objects
     C. [Facade](https://www.geeksforgeeks.org/facade-design-pattern-introduction/) - "Mask to hide the details"
       - Keep complications hidden 
-    D. [Bridge](https://www.geeksforgeeks.org/bridge-design-pattern/) - Prefer Composition over inheritance
-    E. [Proxy](https://www.geeksforgeeks.org/proxy-design-pattern/)
+    D. [Bridge](https://www.geeksforgeeks.org/bridge-design-pattern/) - Prefers Composition to inheritance
+    E. [Proxy](https://www.geeksforgeeks.org/proxy-design-pattern/) - Security
   III. Behavioral Design Pattern
+
+=============================\
+### **Structural Design Patterns (11/21/2022)**
+- Composite is a base pattern
+- [Bridge Design Pattern](https://www.geeksforgeeks.org/bridge-design-pattern/) - Prefers Composition to inheritance
+  - "Bridge" in PP Slide: `Shape` could be an abstract class. `Shape` class depends on `Color` interface (Solid line with arrow)
+  - Rather than having "color" be an attribute in `Shape`, separate this out into its own class (or in this case, interface).
+  - "Bridging two concepts"
+  - Bridge is a special case of a composition
+  - From a data center point of view: Network <-> VMs <-> storage <-> etc
+- Proxy
+  - Think of it as a cache.
+  - Java RMI - uses proxy pattern
+  - Load balancer
+  - Client Object -> Proxy Object -> Real Object
+    - Important for security
+- UML Aside:
+  - Know how to implement a UML diagram into code
+  - Association A <- - - -> B (dependency both ways of A and B)
+- Composition 90% and Inheritance 10%
+
+### **Behavioral Design Patterns**
+  A. [Decorator](https://www.geeksforgeeks.org/decorator-design-pattern-in-java-with-example/) - A pattern that takes a bare object and embellishes it
+    - Works during runtime unlike prototype which is static
+    - Car Example
+      - Car is a concept, implements an interface.
+      - CarDecorator
+      - ConceptCar - Concrete version of a decorator
+      - Addresses both composition and inheritance
+  B. [Mediator](https://www.geeksforgeeks.org/mediator-design-pattern/)
+    - Similar to bridge / proxy
+    - Chat example:
+      - User (possible abstract class) DEPENDS ON ChatMediator interface (0..1 ChatMediators)
+      - UserImpl inherits User
+      - ChatMediatorImpl implements ChatMediator
+      - ChatMediatorImpl DEPENDS ON User (0..\* users)
+  C. Strategy - [1](https://www.geeksforgeeks.org/strategy-pattern-set-1/) and [2](https://www.geeksforgeeks.org/strategy-pattern-set-2/)
+  D. Observer-Observable - [1](https://www.geeksforgeeks.org/observer-pattern-set-1-introduction/) and [2](https://www.geeksforgeeks.org/observer-pattern-set-2-implementation/?ref=rp)
+    - When Observable object changes state, notify all dependent Observer objects
+    - Implemented in many frameworks and most, if not all, GUIs.
+  E. [Visitor](https://www.geeksforgeeks.org/visitor-design-pattern/)
+    - Used when working on individual elements of a collection, and we want to change functionality without changing classes.
+    - `Visitor` class can `visit()` objects who themselves have `accept()` methods to accept a visitor.
+  
+**FINAL EXAM**
+- Read up on JUNIT: Including JUNIT Website
+- Abstract Classes
+- Style of exam is similar to first exam
+- Slide deck
+- 20 Questions of multiple choice?
+- 4 Short answers. Write as much as possible that's relevant. "What is inheritance"
+- 3 coding questions
